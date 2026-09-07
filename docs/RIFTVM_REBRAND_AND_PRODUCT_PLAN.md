@@ -1,6 +1,6 @@
 # RiftVM 全面改名与产品演进方案
 
-状态：拟执行  
+状态：历史方案，已由 [RiftVM 统一产品计划](RIFTVM_UNIFIED_PRODUCT_PLAN.md) 取代。本文的双应用、双 Bundle ID、双发行包要求不再执行。  
 日期：2026-09-06  
 改名前基线：`main` / `b0e2b80`  
 主域名：`riftvm.com`
