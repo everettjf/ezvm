@@ -4,14 +4,14 @@
 
 # EZVM
 
-**Virtual machines, made easy — a focused native app for Apple silicon Macs.**
+**A native, general-purpose virtual machine app for Apple silicon Macs.**
 
 [![macOS 27+](https://img.shields.io/badge/macOS-27%2B-111827?logo=apple)](https://support.apple.com/macos)
 [![Apple silicon](https://img.shields.io/badge/Apple%20silicon-required-111827)](https://support.apple.com/en-us/116943)
 [![License](https://img.shields.io/github/license/everettjf/ezvm)](LICENSE)
 [![Pages](https://github.com/everettjf/ezvm/actions/workflows/pages.yml/badge.svg)](https://everettjf.github.io/ezvm/)
 
-![EZVM showing a running Omarchy desktop beside its virtual machine library](./Assets/screenshot1.jpg)
+![EZVM running Linux and macOS virtual machines](./docs/assets/ezvm-linux-macos-running.webp)
 
 ## Install EZVM
 
@@ -22,13 +22,17 @@ and notarized app with Homebrew:
 brew install --cask everettjf/tap/ezvm
 ```
 
-### Omarchy guests
-
-Omarchy runs as an ARM64 Linux guest inside the single EZVM app. The repository
-keeps its verified image, Guest Agent, shared-folder, and desktop-integration
-building blocks without shipping a separate macOS application.
-
 EZVM uses Apple's [`Virtualization.framework`](https://developer.apple.com/documentation/virtualization) to create and run macOS and Linux virtual machines with a focused SwiftUI interface. It aims to be dependable, understandable, and useful without becoming a full emulation suite.
+
+## Product focus
+
+EZVM focuses on general-purpose virtual machines: macOS, Ubuntu, Debian,
+Fedora, Kali Linux, and other compatible ARM64 guests. It provides one VM
+library and a consistent workflow for creation, configuration, snapshots,
+cloning, import/export, and local automation.
+
+For a dedicated Omarchy experience, use [RiftVM](http://riftvm.com/). EZVM and
+RiftVM are separate products built on Apple's `Virtualization.framework`.
 
 > **Project status:** EZVM is Developer ID-signed and Apple-notarized. VM software can affect large disk images, so keep backups of important guests.
 
@@ -64,8 +68,6 @@ EZVM uses Apple's [`Virtualization.framework`](https://developer.apple.com/docum
 
 ## Installation details
 
-### EZVM only
-
 Install the signed and notarized release from the EZVM Homebrew tap:
 
 ```sh
@@ -73,13 +75,6 @@ brew install --cask everettjf/tap/ezvm
 ```
 
 Or download the archive from [GitHub Releases](https://github.com/everettjf/ezvm/releases/latest).
-
-### Omarchy
-
-Install Omarchy as a VM managed by EZVM with `scripts/install-omarchy.sh`.
-There is no separate EZVM Omarchy application or release channel.
-
-![Omarchy reaching its first-run welcome screen inside EZVM](./docs/assets/omarchy-ezvm.png)
 
 ### Command line and headless mode
 
@@ -145,14 +140,6 @@ loops, or a release repeatedly asks for Keychain access, start with the
 problems, guest Agent/compositor problems, image compatibility, and release
 signing problems so that one workaround does not hide a different failure.
 
-The September 2026 clean-image acceptance run rebuilt and imported a 64 GiB
-sparse Omarchy image, completed the entire first-run flow, reached Hyprland,
-adapted the desktop to full screen, exercised Command-to-Super shortcuts and
-continuous typing (including remotely synthesized Shift characters), verified
-browser scrolling by hand, and confirmed guest NAT, DNS, TLS 1.3/HTTP/2, and
-the real pacman update path. The deployment target is macOS 27; Linux guests
-select Custom VirGL while retaining the Apple Virtio startup fallback.
-
 ## Guest images
 
 ### macOS
@@ -161,11 +148,15 @@ Pick a macOS version from the built-in list in the creation flow (or use the lat
 
 ### Linux
 
-Pick a distribution from the built-in list in the creation flow (Ubuntu Server/Desktop, Debian, Fedora), or choose any **ARM64 / AArch64** installer ISO, for example [Ubuntu](https://ubuntu.com/download/server/arm) or [Fedora](https://fedoraproject.org/server/download). Intel/AMD (`x86_64`) images are not supported.
+Pick a distribution from the built-in list in the creation flow (Ubuntu
+Server/Desktop, Debian, Fedora), or choose any **ARM64 / AArch64** installer
+ISO. This includes local ARM64 images for Kali Linux and other distributions.
+Intel/AMD (`x86_64`) images are not supported.
 
 ## Direction
 
-EZVM is not trying to replace UTM, VirtualBuddy, Tart, or Lima. Its direction is narrower:
+EZVM is not trying to replace UTM, VirtualBuddy, Tart, or Lima. Its direction
+is a focused, dependable general-purpose VM manager:
 
 1. Make VM creation, launch, stop, recovery, and error handling reliable.
 2. Keep local macOS 27 tests, signed releases, Homebrew distribution,
