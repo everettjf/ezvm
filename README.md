@@ -22,23 +22,11 @@ and notarized app with Homebrew:
 brew install --cask everettjf/tap/ezvm
 ```
 
-### EZVM Omarchy
+### Omarchy guests
 
-**EZVM Omarchy** is a separate, single-purpose macOS app: open it and continue
-directly into one persistent Omarchy workspace. It uses the same native
-Virtualization.framework core as EZVM, but replaces the VM-library workflow
-with Omarchy-focused onboarding, recovery, dynamic display, shared folders,
-text/PNG clipboard, notifications, and focus-scoped Command-to-Super shortcuts.
-
-[Download EZVM Omarchy directly](https://github.com/everettjf/ezvm/releases/download/ezvm-omarchy-v1.0.0-alpha.44/EZVM-Omarchy-1.0.0-alpha.44.zip).
-No separate EZVM installation or Homebrew command is required: on first launch,
-the app downloads and verifies its pinned Omarchy Factory image and creates the
-persistent workspace. Allow approximately **16 GiB of free disk space**.
-
-It is an independent community preview for Apple silicon Macs running macOS 27
-or later—not an Omarchy-endorsed stable release. The remaining Daily Driver
-endurance work is tracked in the
-[EZVM Omarchy follow-up TODO](docs/todo/EZVM_OMARCHY_TODO.md).
+Omarchy runs as an ARM64 Linux guest inside the single EZVM app. The repository
+keeps its verified image, Guest Agent, shared-folder, and desktop-integration
+building blocks without shipping a separate macOS application.
 
 EZVM uses Apple's [`Virtualization.framework`](https://developer.apple.com/documentation/virtualization) to create and run macOS and Linux virtual machines with a focused SwiftUI interface. It aims to be dependable, understandable, and useful without becoming a full emulation suite.
 
@@ -86,14 +74,10 @@ brew install --cask everettjf/tap/ezvm
 
 Or download the archive from [GitHub Releases](https://github.com/everettjf/ezvm/releases/latest).
 
-### EZVM Omarchy
+### Omarchy
 
-[Download the dedicated signed and notarized Alpha](https://github.com/everettjf/ezvm/releases/download/ezvm-omarchy-v1.0.0-alpha.44/EZVM-Omarchy-1.0.0-alpha.44.zip),
-open `EZVM Omarchy.app`, and complete the native owner setup. The app handles
-the verified Omarchy image download and persistent workspace automatically.
-The older `scripts/install-omarchy.sh` path remains available for users who
-specifically want Omarchy as a VM inside the general-purpose EZVM app, but it
-is no longer the recommended Omarchy experience.
+Install Omarchy as a VM managed by EZVM with `scripts/install-omarchy.sh`.
+There is no separate EZVM Omarchy application or release channel.
 
 ![Omarchy reaching its first-run welcome screen inside EZVM](./docs/assets/omarchy-ezvm.png)
 
@@ -132,12 +116,6 @@ installation leaves no partial machine bundle.
 3. Select the **EZVM** scheme and your Mac as the run destination.
 4. Choose your own development team and bundle identifier if code signing requires it.
 5. Build and run with <kbd>⌘R</kbd>.
-
-To build the independent EZVM Omarchy app instead, open
-`EZVMOmarchy/EZVMOmarchy.xcodeproj` and select the **EZVM Omarchy** scheme. Its
-architecture, product boundaries, image policy, security model, and acceptance
-history are documented in the
-[EZVM Omarchy product plan](docs/EZVM_OMARCHY_PLAN.md).
 
 ### Linux graphics backends
 

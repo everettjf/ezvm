@@ -1,7 +1,7 @@
 # EZVM Omarchy Guest Overlay
 
-This directory contains the Omarchy-specific image additions owned by the
-dedicated product. It does not fork the general EZVM Guest Agent.
+This directory contains the Omarchy-specific image additions used when
+Omarchy runs as a guest in EZVM. It does not fork the general EZVM Guest Agent.
 
 The image build creates `/mnt/ezvm-shared`, then installs and enables
 `systemd/mnt-ezvm\x2dshared.mount`. The escaped unit name is required by

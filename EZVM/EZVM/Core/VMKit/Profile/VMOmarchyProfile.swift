@@ -1,6 +1,6 @@
 import Foundation
 
-/// Versioned product contract shared by EZVM and the dedicated EZVM Omarchy app.
+/// Versioned Omarchy guest contract used by EZVM and its image tooling.
 /// It deliberately contains product policy, not mutable per-workspace state.
 public struct VMOmarchyProfile: Codable, Equatable {
     public static let currentSchemaVersion = 1

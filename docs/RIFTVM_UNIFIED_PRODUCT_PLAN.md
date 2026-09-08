@@ -1,6 +1,7 @@
 # RiftVM 1.0.0 统一产品实施计划
 
-状态：拟执行。本文取代 RIFTVM_REBRAND_AND_PRODUCT_PLAN.md 中的双应用结构；本轮仅制定计划。
+状态：历史提案，未执行。当前仓库只保留 EZVM；独立的 EZVM Omarchy
+App、工程和发行链已删除。本文保留作为 2026-09-06 的产品讨论记录。
 
 ## 1. 产品决策
 
@@ -67,8 +68,8 @@ factory、Overlay、Agent 保留资源构建流水线；它们不是第二个桌
 |---|---|
 | EZVM/EZVM/Application | App shell、工作空间列表、创建入口、菜单、退出处理 |
 | EZVM/EZVM/Core/VMKit | VM 模型、runner、快照、导入导出、机器锁 |
-| EZVMOmarchy/Sources | factory 安装、owner setup、显示、输入、剪贴板、通知 |
-| EZVMOmarchy/GuestOverlay | 迁入 Guest 资源目录，保留 Overlay 工具 |
+| 已删除的独立 Omarchy App | 曾包含 owner setup、显示、输入、剪贴板、通知原型 |
+| GuestAgent/omarchy-overlay | Omarchy Guest 镜像资源，继续由 EZVM 工具使用 |
 | GuestAgent/linux | Rift Agent 系统与用户会话服务 |
 | CLI、Tools、scripts | 一个 CLI 和应用发行链，保留资源工具 |
 

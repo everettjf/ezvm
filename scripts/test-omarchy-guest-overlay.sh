@@ -2,8 +2,8 @@
 set -eu
 
 project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
-unit="$project_root/EZVMOmarchy/GuestOverlay/systemd/mnt-ezvm\x2dshared.mount"
-session_unit="$project_root/EZVMOmarchy/GuestOverlay/systemd/ezvm-session-agent.service"
+unit="$project_root/GuestAgent/omarchy-overlay/systemd/mnt-ezvm\x2dshared.mount"
+session_unit="$project_root/GuestAgent/omarchy-overlay/systemd/ezvm-session-agent.service"
 
 test -f "$unit"
 grep -qx 'What=ezvm_shared' "$unit"
@@ -20,7 +20,7 @@ grep -qx 'NoNewPrivileges=true' "$session_unit"
 grep -qx 'ProtectSystem=strict' "$session_unit"
 grep -qx 'ReadWritePaths=/run/ezvm-agent/sessions /mnt/ezvm-shared' "$session_unit"
 
-if find "$project_root/EZVMOmarchy/GuestOverlay" -type l | grep -q .; then
+if find "$project_root/GuestAgent/omarchy-overlay" -type l | grep -q .; then
     echo "Guest Overlay must not contain symbolic links" >&2
     exit 1
 fi

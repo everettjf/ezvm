@@ -26,9 +26,9 @@ git -C "$project_root" show "$agent_ref:GuestAgent/linux/install.sh" 2>/dev/null
 system_unit='etc/systemd/system/mnt-ezvm\x2dshared.mount'
 user_unit='etc/systemd/user/ezvm-session-agent.service'
 owner_provisioner='usr/local/libexec/ezvm-owner-provisioning'
-cmp -s "$project_root/EZVMOmarchy/GuestOverlay/systemd/mnt-ezvm\x2dshared.mount" \
+cmp -s "$project_root/GuestAgent/omarchy-overlay/systemd/mnt-ezvm\x2dshared.mount" \
   "$profile/overlay/$system_unit" || fail "shared-folder mount unit is missing or differs from the product contract"
-cmp -s "$project_root/EZVMOmarchy/GuestOverlay/systemd/ezvm-session-agent.service" \
+cmp -s "$project_root/GuestAgent/omarchy-overlay/systemd/ezvm-session-agent.service" \
   "$profile/overlay/$user_unit" || fail "Session Agent unit is missing or differs from the product contract"
 
 grep -Eq '^[[:space:]]*wl-clipboard([[:space:]]*(#.*)?)?$' "$profile/runtime-packages" || \

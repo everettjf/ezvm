@@ -16,7 +16,7 @@ version=${version#v}
   exit 64
 }
 
-source_root="$project_root/EZVMOmarchy/GuestOverlay/systemd"
+source_root="$project_root/GuestAgent/omarchy-overlay/systemd"
 mount_unit="$source_root/mnt-ezvm\x2dshared.mount"
 session_unit="$source_root/ezvm-session-agent.service"
 test -f "$mount_unit"

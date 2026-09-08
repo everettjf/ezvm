@@ -10,8 +10,6 @@ let package = Package(
         .library(name: "EZVMCLIKit", targets: ["EZVMCLIKit"]),
         .executable(name: "ezvm", targets: ["ezvm"]),
         .executable(name: "omarchy-factory-tool", targets: ["OmarchyFactoryTool"]),
-        .executable(name: "omarchy-rollback-acceptance-tool", targets: ["OmarchyRollbackAcceptanceTool"]),
-        .executable(name: "omarchy-soak-acceptance-tool", targets: ["OmarchySoakAcceptanceTool"]),
     ],
     targets: [
         .target(
@@ -74,15 +72,6 @@ let package = Package(
             name: "OmarchyFactoryTool",
             dependencies: ["EZVMCore"],
             path: "Tools/OmarchyFactoryTool"
-        ),
-        .executableTarget(
-            name: "OmarchyRollbackAcceptanceTool",
-            dependencies: ["EZVMCore"],
-            path: "Tools/OmarchyRollbackAcceptanceTool"
-        ),
-        .executableTarget(
-            name: "OmarchySoakAcceptanceTool",
-            path: "Tools/OmarchySoakAcceptanceTool"
         ),
         .testTarget(
             name: "EZVMCLIKitTests",

@@ -3,125 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Run Omarchy as a dedicated Mac workspace, or create native macOS and ARM64 Linux virtual machines with EZVM.">
-  <meta name="theme-color" content="#07152f">
+  <meta name="description" content="EZVM is a native virtual machine app for macOS and ARM64 Linux on Apple silicon.">
+  <meta name="theme-color" content="#08111f">
   <meta property="og:title" content="EZVM — Virtual machines, made easy">
-  <meta property="og:description" content="Choose EZVM Omarchy for a focused workspace or EZVM for native macOS and ARM64 Linux virtual machines.">
+  <meta property="og:description" content="Run macOS, Ubuntu, Debian, Kali, Fedora, and other ARM64 guests on your Mac.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://xnu.app/ezvm/">
-  <meta property="og:image" content="https://xnu.app/ezvm/assets/ezvm-omarchy-rally-car.webp">
+  <meta property="og:image" content="https://xnu.app/ezvm/assets/ezvm-create-linux.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/ezvm-icon.png">
   <link rel="canonical" href="https://xnu.app/ezvm/">
-  <title>EZVM — Omarchy, macOS, and Linux made easy</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <title>EZVM — macOS and Linux virtual machines</title>
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <header class="nav wrap">
-    <a class="brand" href="#top" aria-label="EZVM home"><img class="mark" src="assets/ezvm-icon.png" width="36" height="36" alt="">EZVM</a>
+    <a class="brand" href="#top" aria-label="EZVM home"><img src="assets/ezvm-icon.png" width="38" height="38" alt="">EZVM</a>
     <nav aria-label="Main navigation">
-      <a href="#top">Products</a>
-      <a href="#features">Features</a>
       <a href="#systems">Systems</a>
-      <a href="https://discord.gg/eGzEaP6TzR">Community</a>
+      <a href="#features">Features</a>
       <a class="button small" href="https://github.com/everettjf/ezvm">GitHub</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="split-hero" id="install" aria-label="Choose an EZVM product">
-      <a class="split-product split-omarchy" href="https://github.com/everettjf/ezvm/releases/download/ezvm-omarchy-v1.0.0-alpha.44/EZVM-Omarchy-1.0.0-alpha.44.zip" aria-label="Download EZVM Omarchy">
-        <span class="product-content omarchy-content">
-          <span class="product-kicker">The featured experience</span>
-          <span class="product-title">EZVM <strong>Omarchy</strong></span>
-          <span class="product-copy">Open Omarchy.<br>Start working.</span>
-          <span class="product-action">Download <span aria-hidden="true">↙</span></span>
-          <span class="product-meta">Apple silicon · macOS 27+ · Signed &amp; notarized</span>
-        </span>
-        <span class="ghost-window hot-window" aria-hidden="true"><i></i><i></i><i></i><b>omarchy@ezvm</b><code>super + space</code></span>
-      </a>
-
-      <a class="split-product split-ezvm" href="#features" aria-label="Explore EZVM for macOS and Linux">
-        <span class="product-content ezvm-content">
-          <span class="product-kicker">The native VM toolkit</span>
-          <span class="product-title">EZVM</span>
-          <span class="product-copy">macOS and Linux.<br>Made easy.</span>
-          <span class="system-list" aria-label="Supported systems"><span>macOS</span><span>Ubuntu</span><span>Fedora</span></span>
-          <span class="product-action">Explore EZVM <span aria-hidden="true">↘</span></span>
-        </span>
-        <span class="ghost-window cool-window" aria-hidden="true"><i></i><i></i><i></i><b>Virtual machines</b><code>Native. Local. Fast.</code></span>
-      </a>
-
-      <div class="hero-rift" aria-hidden="true"></div>
-      <div class="pixel-burst" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Native virtualization for Apple silicon</p>
+        <h1>One app.<br><span>Any ARM64 guest.</span></h1>
+        <p class="lead">Create and run macOS and Linux virtual machines with a focused native interface. Local, fast, and built on Apple’s Virtualization.framework.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/everettjf/ezvm/releases/latest">Download EZVM</a>
+          <code>brew install --cask everettjf/tap/ezvm</code>
+        </div>
+        <p class="note">Requires Apple silicon and macOS 27 or later.</p>
       </div>
-      <div class="hero-car" aria-hidden="true">
-        <span class="car-glow"></span>
-        <img src="assets/ezvm-omarchy-rally-car.webp" width="1536" height="1024" fetchpriority="high" alt="">
-      </div>
-      <div class="hero-choice" aria-hidden="true"><span>Choose your drive</span></div>
-    </section>
-
-    <section class="strip" aria-label="Core capabilities">
-      <div class="wrap stats">
-        <div><strong>Native</strong><span>Virtualization.framework</span></div>
-        <div><strong>Focused</strong><span>macOS + ARM64 Linux</span></div>
-        <div><strong>Local</strong><span>No account required</span></div>
-      </div>
-    </section>
-
-    <section class="section wrap screenshots" aria-labelledby="screenshots-title">
-      <p class="eyebrow">The current app</p>
-      <h2 id="screenshots-title">Create a machine in a few guided steps.</h2>
-      <figure class="runtime-shot">
-        <img src="assets/ezvm-create-linux.png?v=1.0.0" width="1024" height="768" loading="lazy" decoding="async" alt="EZVM guided creation flow showing the dynamically updated ARM64 Linux installer catalog">
-        <figcaption><strong>Choose the guest, then the hardware.</strong> EZVM keeps setup focused and downloads only after you click Create.</figcaption>
+      <figure class="hero-shot">
+        <img src="assets/ezvm-create-linux.png?v=1.0.0" width="1024" height="768" alt="EZVM creating an ARM64 Linux virtual machine">
       </figure>
-      <div class="screenshot-grid">
-        <figure>
-          <img src="assets/ezvm-name-location.png?v=1.0.0" width="1024" height="768" loading="lazy" decoding="async" alt="EZVM suggesting the astronomical virtual machine name Saturn and showing its abbreviated home folder path">
-          <figcaption><strong>Start with a memorable name.</strong> EZVM suggests astronomical names and keeps every machine organized under <code>~/EZVM Virtual Machines</code>.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/ezvm-snapshots.png?v=1.0.0" width="600" height="504" loading="lazy" decoding="async" alt="EZVM snapshot tree with search, restore, rename, protection, and storage information">
-          <figcaption><strong>Snapshots are a tree.</strong> Search branches, restore an ancestor, protect important states, and track their disk usage.</figcaption>
-        </figure>
+    </section>
+
+    <section class="systems" id="systems">
+      <div class="wrap">
+        <p class="eyebrow">Guest systems</p>
+        <h2>Bring the operating system you need.</h2>
+        <div class="system-grid">
+          <article><span class="system-mark">⌘</span><h3>macOS</h3><p>Install from Apple restore images or a local IPSW.</p></article>
+          <article><span class="system-mark">U</span><h3>Ubuntu</h3><p>Curated ARM64 Server and Desktop installers.</p></article>
+          <article><span class="system-mark">D</span><h3>Debian</h3><p>Start from the current ARM64 network installer.</p></article>
+          <article><span class="system-mark">K</span><h3>Kali Linux</h3><p>Use a local ARM64 installer image for security labs.</p></article>
+          <article><span class="system-mark">F</span><h3>Fedora</h3><p>Curated AArch64 Server images are built in.</p></article>
+          <article><span class="system-mark">+</span><h3>More Linux</h3><p>Choose any compatible ARM64 ISO or image URL.</p></article>
+        </div>
+        <p class="omarchy-note">Primarily using Omarchy? We recommend <a href="http://riftvm.com/">RiftVM</a> for the dedicated experience.</p>
       </div>
     </section>
 
-    <section class="section wrap" id="features">
-      <p class="eyebrow">A complete native workflow</p>
-      <h2>Powerful where it matters. Quiet everywhere else.</h2>
-      <div class="cards feature-grid">
-        <article><span>01</span><h3>Download at the end</h3><p>Choose your system and hardware first. EZVM downloads only after you click Create, resumes interrupted downloads, and reuses saved images.</p></article>
-        <article><span>02</span><h3>Snapshot branches</h3><p>Create a history tree, restore an ancestor, branch in another direction, search snapshots, protect important points, and see their storage cost.</p></article>
-        <article><span>03</span><h3>Safe lifecycle</h3><p>Exclusive run leases protect writable disks while normal boot, Recovery, save-state, shutdown, and restart share one lifecycle.</p></article>
-        <article><span>04</span><h3>Modern storage</h3><p>ASIF disks by default, DiskImageKit overlay layers, and APFS copy-on-write fallback snapshots on macOS 27.</p></article>
-        <article><span>05</span><h3>Reliable networking</h3><p>NAT by default, with VMNet-backed bridged, host-only, logical-network, and port-forwarding modes when selected.</p></article>
-        <article><span>06</span><h3>Native integrations</h3><p>Linux Rosetta sharing, Virtio devices, EFI Secure Boot, memory ballooning, and guest provisioning when supported.</p></article>
+    <section class="features wrap" id="features">
+      <p class="eyebrow">Everything in one place</p>
+      <h2>A practical VM manager for the Mac.</h2>
+      <div class="feature-grid">
+        <article><h3>Guided creation</h3><p>Choose a system, tune CPU, memory, display, storage, networking, and shared folders, then create.</p></article>
+        <article><h3>Snapshots and clones</h3><p>Branch, restore, protect, clone, import, and export machines without losing track of their history.</p></article>
+        <article><h3>Native performance</h3><p>Apple’s virtualization stack for macOS guests, plus accelerated graphics options for Linux desktops.</p></article>
+        <article><h3>Local automation</h3><p>Inspect, validate, start, stop, and diagnose machines through the bundled <code>ezvm</code> CLI.</p></article>
       </div>
     </section>
 
-    <section class="section roadmap" id="systems">
-      <div class="wrap roadmap-grid">
-        <div><p class="eyebrow">Always current</p><h2>Choose a release, not just “latest.”</h2><p>macOS signed releases update dynamically and download from Apple. The Linux installer catalog updates independently through this site, so new supported images do not require a new EZVM build.</p></div>
-        <ol>
-          <li><span>01</span><div><strong>Built for macOS 27 and later</strong><p>Pick a signed IPSW from the refreshed catalog or let Apple resolve the newest version compatible with your Mac.</p></div></li>
-          <li><span>02</span><div><strong>Ubuntu, Debian, and Fedora ARM64</strong><p>Use curated native installers, a custom HTTPS URL, or any local ISO.</p></div></li>
-          <li><span>03</span><div><strong>Offline-friendly image store</strong><p>Downloaded images are kept once and shared by future VM creation workflows.</p></div></li>
-          <li><span>04</span><div><strong>Useful diagnostics</strong><p>Export version, host, and VM configuration details directly from Community &amp; Feedback when asking for help.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="cta wrap">
-      <div><p class="eyebrow">Ready to build?</p><h2>Install EZVM in one command.</h2></div>
-      <div class="actions"><a class="button" href="https://github.com/everettjf/ezvm/releases/latest" target="_blank" rel="noopener noreferrer">GitHub Releases</a><a class="text-link" href="https://github.com/everettjf/ezvm/issues">Feedback →</a></div>
+    <section class="closing wrap">
+      <div><p class="eyebrow">Open source</p><h2>Virtual machines, made easy.</h2></div>
+      <div class="actions"><a class="button" href="https://github.com/everettjf/ezvm/releases/latest">Get EZVM</a><a class="text-link" href="https://github.com/everettjf/ezvm/issues">Issues &amp; Feedback →</a></div>
     </section>
   </main>
 
-  <footer class="wrap"><span>EZVM · MIT License</span><span>Two drives. One native core.</span></footer>
+  <footer class="wrap"><span>EZVM · MIT License</span><span>macOS and ARM64 Linux on Apple silicon.</span></footer>
 </body>
 </html>

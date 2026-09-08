@@ -1,5 +1,5 @@
 [Unit]
-Description=EZVM Omarchy desktop session integration
+Description=EZVM Omarchy guest desktop session integration
 After=graphical-session.target spice-guest-tools-bootstrap.service
 PartOf=graphical-session.target
 

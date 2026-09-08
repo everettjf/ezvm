@@ -9,9 +9,9 @@ profile="$fixture/profiles/aarch64-virt"
 agent_ref=$(git -C "$project_root" rev-parse HEAD)
 mkdir -p "$fixture/bin" "$profile/overlay/etc/systemd/system" "$profile/overlay/etc/systemd/user" \
   "$profile/overlay/usr/local/libexec"
-cp "$project_root/EZVMOmarchy/GuestOverlay/systemd/mnt-ezvm\x2dshared.mount" \
+cp "$project_root/GuestAgent/omarchy-overlay/systemd/mnt-ezvm\x2dshared.mount" \
   "$profile/overlay/etc/systemd/system/mnt-ezvm\x2dshared.mount"
-cp "$project_root/EZVMOmarchy/GuestOverlay/systemd/ezvm-session-agent.service" \
+cp "$project_root/GuestAgent/omarchy-overlay/systemd/ezvm-session-agent.service" \
   "$profile/overlay/etc/systemd/user/ezvm-session-agent.service"
 printf '%s\n' wl-clipboard >"$profile/runtime-packages"
 printf '%s\n' '#!/bin/bash' >"$profile/overlay/usr/local/libexec/ezvm-owner-provisioning"
@@ -42,7 +42,7 @@ if "$verify" "$fixture" >/dev/null 2>&1; then
   echo "verifier accepted a modified Session Agent unit" >&2
   exit 1
 fi
-cp "$project_root/EZVMOmarchy/GuestOverlay/systemd/ezvm-session-agent.service" \
+cp "$project_root/GuestAgent/omarchy-overlay/systemd/ezvm-session-agent.service" \
   "$profile/overlay/etc/systemd/user/ezvm-session-agent.service"
 sed -i '' '/wl-clipboard/d' "$profile/runtime-packages"
 if "$verify" "$fixture" >/dev/null 2>&1; then

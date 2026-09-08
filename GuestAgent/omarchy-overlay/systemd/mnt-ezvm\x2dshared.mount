@@ -1,5 +1,5 @@
 [Unit]
-Description=EZVM Omarchy shared folder
+Description=EZVM Omarchy guest shared folder
 After=local-fs-pre.target
 Before=multi-user.target
 
