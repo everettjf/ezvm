@@ -21,10 +21,9 @@ Record this once for every complete run:
 - [ ] Notarization and stapling status are stated explicitly
 - [ ] Guest fixture names and immutable fixture checksums are recorded outside
       the report; enrollment tokens and personal filesystem paths are not
-- [ ] Linux enrollment preflight confirms separate mode-`0600`, non-symlink
-      files whose machine identities match the Omarchy and Ubuntu fixtures
-      before any VM is launched
-- [ ] The matrix read-only guard records metadata fingerprints for all three
+- [ ] Linux enrollment preflight confirms a mode-`0600`, non-symlink file whose
+      machine identity matches the Ubuntu fixture before any VM is launched
+- [ ] The matrix read-only guard records metadata fingerprints for both
       source fixtures and confirms they are unchanged even when a gate fails;
       every boot, mutation, snapshot, and fault injection runs on a COW clone
 - [ ] Result report and sanitized diagnostics are retained for every failure
@@ -40,7 +39,7 @@ Prerequisites:
 - [ ] One disposable mass-storage device with nonessential test data
 - [ ] One non-storage accessory known not to be required by macOS
 - [ ] Optional second disposable accessory for ordering tests
-- [ ] Omarchy, Ubuntu, and macOS disposable VM clones
+- [ ] Ubuntu and macOS disposable VM clones
 
 For each supported guest:
 
@@ -164,7 +163,7 @@ Only after the four sections above pass:
 - [ ] Submit the exact ZIP for notarization and staple the accepted ticket
 - [ ] Recreate the ZIP after stapling and update its SHA-256
 - [ ] Install through the real Homebrew cask on a clean account
-- [ ] Re-run signature, Gatekeeper, stapler, GUI readiness, three-guest matrix,
+- [ ] Re-run signature, Gatekeeper, stapler, GUI readiness, macOS/Ubuntu matrix,
       USB smoke, VMNet transition, ASIF portability, and VirGL A/B gates
 - [ ] Repeat the complete run without manual state repair
 - [ ] Keep this branch unmerged until macOS 27 is formally released and the

@@ -93,7 +93,7 @@ saved_state_json="$("$cli" start "$smoke_vm" --timeout "$timeout")" || fail "col
 # Reproduce the exact Virtualization.framework EFI failure seen in Linux
 # guests. macOS guests use VZMacAuxiliaryStorage rather than an EFI variable
 # store, so creating a synthetic NVRAM file there would test nothing and make
-# the three-guest matrix fail for the wrong reason.
+# the guest matrix fail for the wrong reason.
 if [[ "$guest_type" == "linux" ]]; then
   truncate -s 0 "$second_vm/NVRAM"
   efi_recovery_json="$("$cli" start "$second_vm" --timeout "$timeout")" || fail "EFI recovery start failed: $efi_recovery_json"

@@ -70,22 +70,20 @@ concurrent headless VMs, Agent authentication and byte-exact file transfer,
 guest KVM API availability, and clean stop. The source VM is not modified. The
 same gates run against the notarized archive and the published Homebrew Cask.
 
-### macOS 27 three-guest release matrix
+### macOS 27 release matrix
 
-Before publishing a macOS 27 candidate, keep stopped, disposable fixtures for
-the three creation choices and run the exact signed app through the matrix:
+Before publishing a macOS 27 candidate, keep stopped, disposable macOS and
+Ubuntu fixtures and run the exact signed app through the matrix:
 
 ```bash
 EZVM_MATRIX_MACOS_VM="$HOME/EZVM Test Fixtures/macOS.ezvm" \
-EZVM_MATRIX_OMARCHY_VM="$HOME/EZVM Test Fixtures/Omarchy.ezvm" \
 EZVM_MATRIX_UBUNTU_VM="$HOME/EZVM Test Fixtures/Ubuntu.ezvm" \
-EZVM_MATRIX_OMARCHY_ENROLLMENT="$HOME/EZVM Test Fixtures/omarchy-enrollment.json" \
 EZVM_MATRIX_UBUNTU_ENROLLMENT="$HOME/EZVM Test Fixtures/ubuntu-enrollment.json" \
-scripts/verify-macos27-guest-matrix.sh /path/to/EZVM.app 2.0.0
+scripts/verify-macos27-guest-matrix.sh /path/to/EZVM.app 2.0.1
 ```
 
 The script rejects mislabeled fixtures and, before launching anything, verifies
-that each Linux enrollment is a non-symlink mode-`0600` file bound to that
+that the Ubuntu enrollment is a non-symlink mode-`0600` file bound to that
 fixture's `MachineIdentifier`. It never prints the enrollment token. It then
 verifies the app signature,
 Gatekeeper, entitlements, GUI readiness, and then exercises CLI lifecycle,

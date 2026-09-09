@@ -701,7 +701,7 @@ result is capped at Apple's 64 UTF-16-code-unit limit without splitting a Swift
 grapheme cluster. Import and portability tests use the same normalization, so a
 moved or imported machine does not silently diverge from a newly created one.
 Every signed release guest smoke now also requires the normalized label on the
-actual configuration immediately before startup. The three-guest matrix will
+actual configuration immediately before startup. The macOS/Ubuntu matrix will
 therefore fail if a future macOS or Linux runtime path silently drops it, and
 the retained matrix report records `configuration_label` so that this gate is
 visible in durable release evidence rather than only in terminal output.
